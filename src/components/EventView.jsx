@@ -6,8 +6,8 @@ const EventView = (props) => {
 
     return (
         <div className='event-view'>
-            <h2>{event.title}</h2>
-            <div className='event-time'>{event.time}</div>
+            <h4>{event.title}</h4>
+            <div className='event-time'>{event.start}</div>
             <div className='event-description'>{event.description}</div>
         </div>
     );
