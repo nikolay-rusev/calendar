@@ -1,0 +1,57 @@
+/* MonthView */
+.month-view .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.month-view .days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* DayView */
+.day-view {
+    background-color: yellowgreen;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.day-view .day-of-week {
+    display: none !important;
+}
+
+.date {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.events {
+    margin-top: 10px;
+}
+
+/* EventView */
+.event-view {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-view:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
