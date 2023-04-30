@@ -2,13 +2,12 @@ import React, {useState} from 'react';
 import Modal from './Modal';
 import {config} from '../config';
 import labelMapping from '../labels/config';
+import {compareDates} from '../utils/compareDates';
 
 const DayView = (props) => {
     const {date, children, addEvent} = props;
-    const today = new Date().getDate();
-    const dateDay = date.getDate();
     let dayViewClass = 'day-view';
-    if (today === dateDay) {
+    if (compareDates(new Date(), date)) {
         dayViewClass += ' today';
     }
 
