@@ -26,6 +26,8 @@
 
 /* DayView */
 .day-view {
+    pointer-events: all;
+    cursor: pointer;
     background-color: yellowgreen;
     padding: 10px;
     border-radius: 5px;
@@ -38,6 +40,11 @@
 
 .day-view .day-of-week {
     display: none !important;
+}
+
+.day-view > * {
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 .events {
@@ -59,13 +66,24 @@
     cursor: pointer;
 }
 
+.event-view > * {
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
 button {
     background-color: #4caf50;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 7px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     margin-left: 10px;
     border: 1px solid white;
     border-radius: 4px;

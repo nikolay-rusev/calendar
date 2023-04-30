@@ -14,13 +14,15 @@ const Modal = (props) => {
         return null;
     }
 
-    function onSaveEvent() {
+    function onSaveEvent(e) {
+        e.preventDefault();
+        e.stopPropagation();
         addEvent({
             date: dateToIso(date),
             start: formatTime(eventStart),
             title: eventTitle,
         });
-        onSave();
+        onSave(e);
     }
 
     return (

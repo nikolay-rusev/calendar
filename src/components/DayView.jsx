@@ -18,24 +18,32 @@ const DayView = (props) => {
         setIsModalOpen(true);
     };
 
-    const handleModalClose = () => {
+    const handleModalClose = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         setIsModalOpen(false);
     };
 
     const handleSave = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         // handle save logic
         setIsModalOpen(false);
     };
 
     return (
-        <div className={dayViewClass} data-testid='day-view'>
-            <h3>
+        <div
+            className={dayViewClass}
+            data-testid='day-view'
+            onClick={handleModalOpen}
+        >
+            <h4>
                 {`${date.toLocaleString(config.locale, {
                     // weekday: 'long',
                     month: 'long',
                     day: 'numeric',
                 })}`}
-            </h3>
+            </h4>
             <div className='day-of-week'>
                 {`${new Date(date).toLocaleString(config.locale, {
                     weekday: 'long',
@@ -43,9 +51,6 @@ const DayView = (props) => {
             </div>
             <div className='events'>
                 {children}
-                <button onClick={handleModalOpen}>
-                    {labelMapping.addEvent}
-                </button>
                 <Modal
                     isOpen={isModalOpen}
                     onClose={handleModalClose}
