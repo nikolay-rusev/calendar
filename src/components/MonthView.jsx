@@ -4,6 +4,7 @@ import EventView from './EventView';
 import {config} from '../config';
 import {capitalizeFirstLetter} from '../utils';
 import labelMapping from '../labels/config';
+import {compareDates} from '../utils/compareDates';
 
 const MonthView = (props) => {
     const {month, year, events} = props;
@@ -38,9 +39,11 @@ const MonthView = (props) => {
                     if (date === '') {
                         return <div key={i} className='empty-cell' />;
                     }
-                    const eventsOnDay = events.filter(
-                        (event) => event.date === date,
-                    );
+                    const eventsOnDay = events.filter((event) => {
+                        const eventDate = new Date(event.date);
+                        const currentDate = new Date(year, month, date);
+                        return compareDates(eventDate, currentDate);
+                    });
                     return (
                         <DayView key={i} date={new Date(year, month, date)}>
                             {eventsOnDay.map((event, j) => (
