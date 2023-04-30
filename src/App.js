@@ -4,7 +4,8 @@ import './css/calendar.css';
 import './css/modal.css';
 import MonthView from './components/MonthView';
 import {events as eventsData} from './eventsData';
-import labelMapping from './labels/config';
+import {config} from './config';
+import {capitalizeFirstLetter} from './utils';
 
 function App() {
     const today = new Date();
@@ -29,14 +30,23 @@ function App() {
         }
     };
 
+    const firstDayOfMonth = new Date(year, month, 1);
+
     return (
         <div className='App'>
-            <div className='month-navigation'>
-                <button onClick={handlePrevMonth}>{labelMapping.back}</button>
-                <button onClick={handleNextMonth}>
-                    {labelMapping.forward}
-                </button>
-            </div>
+            <span className='app-navigation'>
+                <span className='prev-next' onClick={handlePrevMonth}>
+                    {'<<'}
+                </span>
+                <span className='month-title'>{`${capitalizeFirstLetter(
+                    firstDayOfMonth.toLocaleString(config.locale, {
+                        month: 'long',
+                    }),
+                )} ${year}`}</span>
+                <span className='prev-next' onClick={handleNextMonth}>
+                    {'>>'}
+                </span>
+            </span>
             <MonthView month={month} year={year} eventsData={eventsData} />
         </div>
     );

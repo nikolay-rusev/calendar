@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import DayView from './DayView';
 import EventView from './EventView';
-import {config} from '../config';
-import {capitalizeFirstLetter} from '../utils';
+
 import labelMapping from '../labels/config';
 
 import {compareDates} from '../utils/compareDates';
@@ -32,11 +31,6 @@ const MonthView = (props) => {
 
     return (
         <div className='month-view'>
-            <h2>{`${capitalizeFirstLetter(
-                firstDayOfMonth.toLocaleString(config.locale, {
-                    month: 'long',
-                }),
-            )} ${year}`}</h2>
             <div className='days-of-week'>
                 <div>{labelMapping.Monday}</div>
                 <div>{labelMapping.Tuesday}</div>

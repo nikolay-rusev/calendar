@@ -1,3 +1,21 @@
+.app-navigation {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.app-navigation > * {
+    margin-right: 10px;
+}
+
+.month-title {
+    font-size: 1.5rem;
+}
+
+.prev-next {
+    cursor: pointer;
+    pointer-events: all;
+}
+
 /* MonthView */
 .month-view .days {
     display: grid;
