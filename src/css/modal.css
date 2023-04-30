@@ -14,7 +14,7 @@
 .modal {
     position: relative;
     width: 400px;
-    background-color: white;
+    background-color: whitesmoke;
     padding: 20px;
     border-radius: 4px;
 }
@@ -50,10 +50,11 @@
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
 }
 
 .modal button:hover {

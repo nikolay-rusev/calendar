@@ -16,7 +16,7 @@ export const events = [
     {
         id: 3,
         title: 'Phone call with Mark',
-        date: '2023-04-10',
+        date: '2023-03-10',
         start: '2:00 PM',
         end: '2:30 PM',
     },
@@ -44,14 +44,14 @@ export const events = [
     {
         id: 7,
         title: 'Meeting with Alex',
-        date: '2023-04-22',
+        date: '2023-03-22',
         start: '3:00 PM',
         end: '4:00 PM',
     },
     {
         id: 8,
         title: 'Lunch with Steve',
-        date: '2023-04-24',
+        date: '2023-03-24',
         start: '12:00 PM',
         end: '1:00 PM',
     },

@@ -1,4 +1,6 @@
 const labelMapping = {
+    back: 'Назад',
+    forward: 'Напред',
     addEvent: 'Добави събитие',
     eventHour: 'Час',
     eventTitle: 'Име на събититието',
