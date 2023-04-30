@@ -4,7 +4,7 @@ import {config} from '../config';
 import labelMapping from '../labels/config';
 
 const DayView = (props) => {
-    const {date, children} = props;
+    const {date, children, addEvent} = props;
     const today = new Date().getDate();
     const dateDay = date.getDate();
     let dayViewClass = 'day-view';
@@ -51,6 +51,8 @@ const DayView = (props) => {
                     onClose={handleModalClose}
                     onSave={handleSave}
                     title={labelMapping.addEvent}
+                    addEvent={addEvent}
+                    date={date}
                 />
             </div>
         </div>

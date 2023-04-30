@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import labelMapping from '../labels/config';
+import {formatTime} from '../utils/formatTime';
+import {dateToIso} from '../utils/dateToIso';
 
 const Modal = (props) => {
-    const {isOpen, onClose, onSave, title} = props;
+    const {isOpen, onClose, onSave, title, addEvent, date} = props;
 
     // Define state variables
     const [eventStart, setEventStart] = useState('');
@@ -10,6 +12,15 @@ const Modal = (props) => {
 
     if (!isOpen) {
         return null;
+    }
+
+    function onSaveEvent() {
+        addEvent({
+            date: dateToIso(date),
+            start: formatTime(eventStart),
+            title: eventTitle,
+        });
+        onSave();
     }
 
     return (
@@ -45,7 +56,7 @@ const Modal = (props) => {
                     <button className='cancel-btn' onClick={onClose}>
                         {labelMapping.cancel}
                     </button>
-                    <button className='save-btn' onClick={onSave}>
+                    <button className='save-btn' onClick={onSaveEvent}>
                         {labelMapping.save}
                     </button>
                 </div>
