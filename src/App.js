@@ -1,6 +1,6 @@
-import './App.css';
-import './calendar.css';
-import './modal.css';
+import './css/App.css';
+import './css/calendar.css';
+import './css/modal.css';
 import MonthView from './components/MonthView';
 import {events} from './eventsData';
 function App() {
