@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import labelMapping from '../labels/config';
+
 const Modal = (props) => {
     const {isOpen, onClose, onSave, title} = props;
+
+    // Define state variables
+    const [eventStart, setEventStart] = useState('');
+    const [eventTitle, setEventTitle] = useState('');
 
     if (!isOpen) {
         return null;
@@ -18,12 +23,22 @@ const Modal = (props) => {
                 </div>
                 <div className='modal-body'>
                     <label>
-                        {labelMapping.modalTime}:
-                        <input type='time' name='time' />
+                        {labelMapping.eventHour}:
+                        <input
+                            type='time'
+                            name='start'
+                            value={eventStart}
+                            onChange={(e) => setEventStart(e.target.value)}
+                        />
                     </label>
                     <label>
-                        {labelMapping.modalEventName}:
-                        <input type='text' name='text' />
+                        {labelMapping.eventTitle}:
+                        <input
+                            type='text'
+                            name='title'
+                            value={eventTitle}
+                            onChange={(e) => setEventTitle(e.target.value)}
+                        />
                     </label>
                 </div>
                 <div className='modal-footer'>

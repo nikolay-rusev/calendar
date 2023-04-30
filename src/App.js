@@ -2,7 +2,7 @@ import './css/App.css';
 import './css/calendar.css';
 import './css/modal.css';
 import MonthView from './components/MonthView';
-import {events} from './eventsData';
+import {events as eventsData} from './eventsData';
 
 function App() {
     const today = new Date();
@@ -14,7 +14,7 @@ function App() {
             <MonthView
                 month={currentMonth}
                 year={currentYear}
-                events={events}
+                eventsData={eventsData}
             />
         </div>
     );

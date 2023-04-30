@@ -1,7 +1,7 @@
 const labelMapping = {
     addEvent: 'Добави събитие',
-    modalTime: 'Час',
-    modalEventName: 'Име на събититието',
+    eventHour: 'Час',
+    eventTitle: 'Име на събититието',
     cancel: 'Откажи',
     save: 'Запамети',
     Monday: 'Понеделник',

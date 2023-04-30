@@ -22,7 +22,7 @@ const DayView = (props) => {
         setIsModalOpen(false);
     };
 
-    const handleSave = () => {
+    const handleSave = (e) => {
         // handle save logic
         setIsModalOpen(false);
     };

@@ -1,17 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import DayView from './DayView';
 import EventView from './EventView';
 import {config} from '../config';
 import {capitalizeFirstLetter} from '../utils';
 import labelMapping from '../labels/config';
+
 import {compareDates} from '../utils/compareDates';
 
 const MonthView = (props) => {
-    const {month, year, events} = props;
+    const {month, year, eventsData} = props;
     const firstDayOfMonth = new Date(year, month, 1);
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const dayOfWeek = firstDayOfMonth.getDay();
     const emptyCells = Array.from({length: dayOfWeek - 1}, (_, i) => '');
+
+    const [events, setEvents] = useState(eventsData);
+
+    function addEvent(event) {
+        setEvents([...events, event]);
+    }
+
+    function removeEvent(id) {
+        const filteredEvents = events.filter((event) => event.id !== id);
+        setEvents(filteredEvents);
+    }
 
     const dates = [
         ...emptyCells,
@@ -45,7 +57,12 @@ const MonthView = (props) => {
                         return compareDates(eventDate, currentDate);
                     });
                     return (
-                        <DayView key={i} date={new Date(year, month, date)}>
+                        <DayView
+                            key={i}
+                            date={new Date(year, month, date)}
+                            addEvent={addEvent}
+                            removeEvent={removeEvent}
+                        >
                             {eventsOnDay.map((event, j) => (
                                 <EventView key={j} event={event} />
                             ))}
