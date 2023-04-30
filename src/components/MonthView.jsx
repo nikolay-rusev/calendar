@@ -3,6 +3,7 @@ import DayView from './DayView';
 import EventView from './EventView';
 import {config} from '../config';
 import {capitalizeFirstLetter} from '../utils';
+import labelMapping from '../labels/config';
 
 const MonthView = (props) => {
     const {month, year, events} = props;
@@ -24,13 +25,13 @@ const MonthView = (props) => {
                 }),
             )} ${year}`}</h2>
             <div className='days-of-week'>
-                <div>Понеделник</div>
-                <div>Вторник</div>
-                <div>Сряда</div>
-                <div>Четвъртък</div>
-                <div>Петък</div>
-                <div className='weekend-day'>Събота</div>
-                <div className='weekend-day'>Неделя</div>
+                <div>{labelMapping.Monday}</div>
+                <div>{labelMapping.Tuesday}</div>
+                <div>{labelMapping.Wednesday}</div>
+                <div>{labelMapping.Thursday}</div>
+                <div>{labelMapping.Friday}</div>
+                <div className='weekend-day'>{labelMapping.Saturday}</div>
+                <div className='weekend-day'>{labelMapping.Sunday}</div>
             </div>
             <div className='days'>
                 {dates.map((date, i) => {
