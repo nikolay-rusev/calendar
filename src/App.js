@@ -3,6 +3,7 @@ import './css/calendar.css';
 import './css/modal.css';
 import MonthView from './components/MonthView';
 import {events} from './eventsData';
+
 function App() {
     const today = new Date();
     const currentMonth = today.getMonth(); // returns the zero-based index of the current month
